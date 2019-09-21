@@ -8,6 +8,7 @@
         <div class="note">
         <h5>{{ note.author_name }}({{ note.author_mail }})</h5>
         <p>{{ note.text }}</p>
+        <p>{{ note.created_at|date:'Y-m-d H:i:s' }}</p>
         <p><a href="{% url 'note_update' note.pk %}">Изменить</a></p>
         <p><a href="{% url 'note_delete' note.pk %}">Удалить</a></p>
         </div>

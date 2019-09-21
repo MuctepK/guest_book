@@ -6,3 +6,7 @@ class NoteForm(forms.Form):
     author_mail = forms.EmailField(max_length=80, label='Email', required=True)
     text = forms.CharField(max_length=3000, label='Текст', required=True,
                            widget=forms.Textarea(attrs={'rows': 4, 'cols': 15}))
+
+
+class SearchForm(forms.Form):
+    pattern = forms.CharField(max_length=100, required=True, label='')

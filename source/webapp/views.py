@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from webapp.models import Note, DEFAULT_STATUS
-from webapp.forms import NoteForm
+from webapp.forms import NoteForm, SearchForm
 
 
 def index_view(request):
     notes = Note.objects.all().filter(status=DEFAULT_STATUS).order_by('-created_at')
-    context = {'notes': notes}
+    search_form = SearchForm()
+    context = {'notes': notes, 'search_form': search_form}
     return render(request, 'index.html', context)
 
 
@@ -56,3 +57,11 @@ def note_update_view(request, pk):
             return render(request, 'update.html', context={
                 'form': form, 'note': note
             })
+
+
+def note_search_view(request):
+    pattern = request.GET.get('pattern')
+    notes = Note.objects.all().filter(author_name__icontains=pattern)
+    search_form = SearchForm()
+    context = {'notes': notes, 'search_form': search_form}
+    return render(request, 'index.html', context)
