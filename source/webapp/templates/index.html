@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block menu %}
+    <li><a href="">Создать запись</a></li>
+{% endblock %}
+{% block content %}
+    <h1>Список записей</h1>
+    {% for note in notes %}
+        <div class="note">
+        <h5>{{ note.author_name }}({{ note.author_mail }})</h5>
+        <p>{{ note.text }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

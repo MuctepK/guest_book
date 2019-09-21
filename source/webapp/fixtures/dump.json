@@ -48,6 +48,30 @@
   }
 },
 {
+  "model": "webapp.note",
+  "pk": 5,
+  "fields": {
+    "author_name": "Blocked Name",
+    "author_mail": "blocked@example.com",
+    "text": "Turpis cursus in hac habitasse. Aliquam ut porttitor leo a diam sollicitudin tempor. Pretium nibh ipsum consequat nisl vel pretium lectus quam. Quis enim lobortis scelerisque fermentum. Ultrices neque ornare aenean euismod elementum. Tortor at risus viverra adipiscing at in tellus integer. Euismod in pellentesque massa placerat duis ultricies lacus sed turpis. Leo a diam sollicitudin tempor id eu. Tincidunt dui ut ornare lectus sit. Sollicitudin ac orci phasellus egestas tellus. Lobortis elementum nibh tellus molestie nunc non blandit massa enim. Curabitur gravida arcu ac tortor dignissim convallis aenean.",
+    "created_at": "2019-09-21T05:50:06.609Z",
+    "updated_at": "2019-09-21T05:50:06.609Z",
+    "status": "blocked"
+  }
+},
+{
+  "model": "webapp.note",
+  "pk": 6,
+  "fields": {
+    "author_name": "Blocked Name 2",
+    "author_mail": "blocked_2@example.com",
+    "text": "Amet purus gravida quis blandit turpis cursus in hac habitasse. Id ornare arcu odio ut sem nulla pharetra diam. Auctor urna nunc id cursus metus aliquam eleifend. Fusce ut placerat orci nulla. Dolor sed viverra ipsum nunc aliquet bibendum enim. Tempor id eu nisl nunc mi ipsum faucibus vitae aliquet. Quis risus sed vulputate odio ut enim blandit. Vel facilisis volutpat est velit egestas dui. Sit amet consectetur adipiscing elit ut. Sit amet porttitor eget dolor morbi non arcu risus quis. Nec ullamcorper sit amet risus. Morbi quis commodo odio aenean sed adipiscing diam donec.",
+    "created_at": "2019-09-21T05:51:04.868Z",
+    "updated_at": "2019-09-21T05:51:04.868Z",
+    "status": "blocked"
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
