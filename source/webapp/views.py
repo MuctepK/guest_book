@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from webapp.models import Note, DEFAULT_STATUS
+from webapp.forms import NoteForm
 
 
 def index_view(request):
@@ -9,7 +10,20 @@ def index_view(request):
 
 
 def note_create_view(request):
-    pass
+    if request.method == 'GET':
+        form = NoteForm()
+        return render(request, 'create.html', context=
+        {
+            'form': form
+        })
+    elif request.method == 'POST':
+        form = NoteForm(data=request.POST)
+        if not form.is_valid():
+            return render(request, 'create.html', context={'form': form})
+        Note.objects.create(author_name=form.cleaned_data['author_name'],
+                            author_mail=form.cleaned_data['author_mail'],
+                            text=form.cleaned_data['text'])
+        return redirect('index')
 
 
 def note_delete_view(request, pk):

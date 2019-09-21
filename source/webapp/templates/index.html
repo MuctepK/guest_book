@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block menu %}
-    <li><a href="">Создать запись</a></li>
+    <li><a href="{% url 'note_create' %}">Создать запись</a></li>
 {% endblock %}
 {% block content %}
     <h1>Список записей</h1>
