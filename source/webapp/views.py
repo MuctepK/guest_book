@@ -27,7 +27,12 @@ def note_create_view(request):
 
 
 def note_delete_view(request, pk):
-    pass
+    note = get_object_or_404(Note, pk=pk)
+    if request.method == 'GET':
+        return render(request, 'delete.html', context={'note': note})
+    elif request.method == 'POST':
+        note.delete()
+        return redirect('index')
 
 
 def note_update_view(request, pk):

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Удалить задачу{% endblock %}
+{% block content %}
+    <h3>Вы уверены что хотите удалить <br>"{{ note }}"?</h3>
+    <form method="POST" action="{% url "note_delete" note.pk %}" class="text-center">
+        {% csrf_token %}
+        <p><input type="submit" value="Подвердить" class="mt-5 btn btn-danger"></p>
+        <p><a href="{% url 'index' %}" class="mt-5 btn btn-default">Отмена</a></p>
+    </form>
+{% endblock %}
