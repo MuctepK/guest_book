@@ -1,0 +1,68 @@
+[
+{
+  "model": "webapp.note",
+  "pk": 1,
+  "fields": {
+    "author_name": "Kutman Mairambek uulu",
+    "author_mail": "muctep.k@gmail.com",
+    "text": "LOREM\r\nLOREM\r\nLOREM\r\nLOREM\r\nLOREM",
+    "created_at": "2019-09-21T05:43:23.861Z",
+    "updated_at": "2019-09-21T05:43:23.861Z",
+    "status": "active"
+  }
+},
+{
+  "model": "webapp.note",
+  "pk": 2,
+  "fields": {
+    "author_name": "John Doe",
+    "author_mail": "john_doe@example.com",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "created_at": "2019-09-21T05:45:06.593Z",
+    "updated_at": "2019-09-21T05:45:06.593Z",
+    "status": "active"
+  }
+},
+{
+  "model": "webapp.note",
+  "pk": 3,
+  "fields": {
+    "author_name": "Vasilii Pupkin",
+    "author_mail": "vasya@example.com",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur libero id. Velit ut tortor pretium viverra suspendisse potenti nullam ac. Donec adipiscing tristique risus nec. Nunc congue nisi vitae suscipit tellus mauris.",
+    "created_at": "2019-09-21T05:45:46.456Z",
+    "updated_at": "2019-09-21T05:45:46.456Z",
+    "status": "active"
+  }
+},
+{
+  "model": "webapp.note",
+  "pk": 4,
+  "fields": {
+    "author_name": "Not Real Name",
+    "author_mail": "not_real@example.com",
+    "text": "Congue quisque egestas diam in arcu cursus euismod quis viverra. Placerat vestibulum lectus mauris ultrices eros. Mollis nunc sed id semper risus in. Auctor eu augue ut lectus arcu bibendum at varius. Pretium fusce id velit ut tortor pretium viverra suspendisse potenti. Dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo.",
+    "created_at": "2019-09-21T05:46:28.312Z",
+    "updated_at": "2019-09-21T05:46:28.312Z",
+    "status": "active"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$Mhc0Wh3LcXsm$ZHY80e0ts6my0LDPZ6oj+bqTbHe/o9D8lWr0+c/pDJo=",
+    "last_login": "2019-09-21T05:38:41.497Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-09-21T05:27:44.158Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
