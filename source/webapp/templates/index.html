@@ -1,16 +1,32 @@
 {% extends 'base.html' %}
+{% load widget_tweaks %}
 {% block menu %}
     <li><a href="{% url 'note_create' %}">Создать запись</a></li>
 {% endblock %}
 {% block content %}
-    <h1>Список записей</h1>
+    <h1>Гостевая книга</h1>
+    <form class="form-inline mr-auto" method="GET" action="{% url 'note_search' %}">
+          <div class="md-form my-0">
+           {{search_form.pattern|add_class:'form-control'}}
+          </div>
+          <button  class="btn btn-primary search-btn" type="submit">Найти</button>
+    </form>
     {% for note in notes %}
         <div class="note">
-        <h5>{{ note.author_name }}({{ note.author_mail }})</h5>
-        <p>{{ note.text }}</p>
-        <p>{{ note.created_at|date:'Y-m-d H:i:s' }}</p>
-        <p><a href="{% url 'note_update' note.pk %}">Изменить</a></p>
-        <p><a href="{% url 'note_delete' note.pk %}">Удалить</a></p>
+            <div class="row">
+                <div class="left col-8 d-flex justify-content-between">
+                    <h5>{{ note.author_name }}</h5>
+                    <h5>({{ note.author_mail }})</h5>
+                </div>
+                <div class="right col-4 d-flex justify-content-end">
+                    <p><a href="{% url 'note_update' note.pk %}"><i class="far fa-edit"></i></a></p>
+                    <p></p><a href="{% url 'note_delete' note.pk %}"><i class="far fa-trash-alt"></i></a></p>
+                </div>
+
+            </div>
+        <p class="text">{{ note.text }}</p>
+        <p>Дата создания: {{ note.created_at|date:'Y-m-d H:i:s' }}</p>
+
         </div>
     {% endfor %}
 {% endblock %}

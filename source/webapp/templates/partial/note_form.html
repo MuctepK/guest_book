@@ -7,12 +7,13 @@
     <div class="row mt-5">
         <p class="col-2"><label for="{{ field.id_for_label }}">{{ field.label }} {% if field.field.required %}*{% endif %}</label></p>
         {% if field.errors %}
-            <p>{{ field| add_class:'field-error' }}</p>
+            <p class="col-10 d-flex">{{ field| add_class:'field-error form-control' }}</p>
         {% else %}
             <p class="col-10 d-flex">{{ field | add_class:'form-control'}}</p>
         {% endif %}
         {% for error in field.errors %}
-            <p class="form-error">{{ error }}</p>
+            <div class="empty col-2 d-flex"></div>
+            <p class="form-error col-10 d-flex">{{ error }}</p>
         {% endfor %}
     </div>
 

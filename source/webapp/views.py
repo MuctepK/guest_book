@@ -61,7 +61,8 @@ def note_update_view(request, pk):
 
 def note_search_view(request):
     pattern = request.GET.get('pattern')
-    notes = Note.objects.all().filter(author_name__icontains=pattern)
+    notes = Note.objects.all().filter(author_name__icontains=pattern).\
+        filter(status=DEFAULT_STATUS).order_by('-created_at')
     search_form = SearchForm()
     context = {'notes': notes, 'search_form': search_form}
     return render(request, 'index.html', context)
