@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from webapp.models import Note, DEFAULT_STATUS
 from webapp.forms import NoteForm
 
@@ -31,4 +31,23 @@ def note_delete_view(request, pk):
 
 
 def note_update_view(request, pk):
-    pass
+    note = get_object_or_404(Note, pk=pk)
+    if request.method == 'GET':
+        form = NoteForm(data={'author_name': note.author_name,
+                              'author_mail': note.author_mail,
+                              'text': note.text})
+        return render(request, 'update.html', context={'note': note,
+                                                       'form': form
+                                                       })
+    elif request.method == 'POST':
+        form = NoteForm(data=request.POST)
+        if form.is_valid():
+            note.author_name = form.cleaned_data['author_name']
+            note.author_mail = form.cleaned_data['author_mail']
+            note.text = form.cleaned_data['text']
+            note.save()
+            return redirect('index')
+        else:
+            return render(request, 'update.html', context={
+                'form': form, 'note': note
+            })
